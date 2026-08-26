@@ -151,6 +151,41 @@ Accès rapide au dashboard, aux challenges et au classement depuis un menu princ
 Feedback immédiat lors des évaluations (résultat du QCM affiché instantanément)
 Notifications pour informer l'apprenant d'un nouveau message (chat parcours), d'une correction manuelle effectuée, ou d'un certificat obtenu.
 
-## 7. Planning et livrables
 
-*(à venir)*
+
+## 7. Planning et livrables — Proposition
+
+### Jalons
+
+| Période | Jalon | Livrable |
+|---|---|---|
+| S1 | Bootcamp n°1 — Lancement | Idée de projet validée |
+| S2–S3 | Cadrage & Specs générales | Document de spécifications générales (ce document) |
+| S2–S10 | Mise en œuvre de l'environnement de DEV | Environnement Django/Angular/PostgreSQL opérationnel, dépôt GitHub structuré |
+| S8 | Squelette du code | Structure des classes de base (modèles Django génériques) et interfaces (composants Angular de base) |
+| S9 | Backlog macro | Liste priorisée des fonctionnalités (user stories) |
+| S8–S9 | Tests unitaires + Sonar | Tests sur le squelette, validation qualité de code |
+| S11 | Specs détaillées + Architecture logique (Bootcamp n°2) | Diagrammes UML (cas d'utilisation, classes, séquences), maquettes |
+| S12–S22 | Sprints de développement | Fonctionnalités développées progressivement par sprint (voir découpage ci-dessous) |
+| S23 | Hackathon + Démo Days (Bootcamp n°3) | Démonstration de la plateforme fonctionnelle |
+| S24 | Finalisation | Nettoyage du code, documentation complète, livraison finale |
+
+### Découpage indicatif des sprints (S12–S22, ~10 semaines, solo)
+
+| Sprint | Semaines | Fonctionnalités visées |
+|---|---|---|
+| Sprint 1 | S12–S13 | Authentification (inscription, connexion, OAuth) + gestion profil |
+| Sprint 2 | S14–S15 | Modèle générique Domaine → Parcours → Cours → Leçons + interface admin |
+| Sprint 3 | S16–S17 | Évaluations (QCM) + progression séquentielle des leçons |
+| Sprint 4 | S18–S19 | Challenges communautaires (audio/vidéo/texte) + classement |
+| Sprint 5 | S20 | Certification automatique (PDF + QR code) |
+| Sprint 6 | S21–S22 | Dashboard complet (mentorat, dépôt de projet, webinaires, chat temps réel) |
+
+### Livrables attendus
+- Spécifications générales et détaillées (documents Markdown/GitHub)
+- Diagrammes UML et maquettes
+- Code source versionné (dépôt GitHub, commits réguliers par sprint)
+- Tests unitaires
+- Documentation technique finale
+- Plateforme déployée et démontrée lors du Démo Day (S23)
+
