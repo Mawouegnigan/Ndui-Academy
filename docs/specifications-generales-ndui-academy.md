@@ -1,7 +1,7 @@
 # Spécifications générales du projet — Ndui Academy
 
 **Certificat Développement Python — FORCE-N**
-**Auteur :** *( Mawouégnigan Grégoire FANGNON)*
+**Auteur :** Mawouégnigan Grégoire FANGNON
 **Date :** Août 2026
 
 ---
@@ -88,6 +88,18 @@ Ce projet vise à démontrer une version fonctionnelle et sécurisée de la plat
 - Correction manuelle des challenges
 - Suivi des certifications délivrées
 
+### h. Recommandation adaptative *(architecture prête, version avancée évolutive)*
+- Suivi des interactions de l'apprenant (leçons vues, scores, temps passé, abandons) via une entité dédiée de traçabilité comportementale
+- Version 1 : recommandations basées sur des règles simples (ex : reproposer une leçon après un échec de quiz, suggérer la suite logique du parcours)
+- Module isolé (app Django dédiée) pour permettre une évolution future vers un moteur plus avancé (analyse comportementale, filtrage collaboratif à la MTN Skills/DataCamp/iSHEERO) sans refonte technique majeure
+- Emplacement dédié dans le dashboard apprenant ("Recommandé pour vous")
+
+### i. Assistant conversationnel intelligent
+- Chatbot disponible 24/7 pour répondre aux questions fréquentes des apprenants (utilisation de la plateforme, contenu des cours, navigation) en l'absence de l'équipe
+- Basé sur une API d'intelligence artificielle, avec un contexte limité au contenu de la plateforme (FAQ, cours) pour garantir des réponses pertinentes et neutres
+- Neutralité théologique stricte : le chatbot ne donne aucune interprétation doctrinale personnelle
+- Escalade automatique vers un mentor/administrateur pour les questions complexes, sensibles ou non résolues
+
 ---
 
 ## 5. Besoins techniques
@@ -105,6 +117,9 @@ Ce projet vise à démontrer une version fonctionnelle et sécurisée de la plat
 | Génération PDF | WeasyPrint / ReportLab | Génération automatique des certificats |
 | QR Code | Librairie Python `qrcode` | Génération du QR de vérification |
 | Authentification | Django auth + OAuth 2.0 (Google, Facebook) | Inscription simplifiée |
+| Suivi comportemental | Modèle Django dédié (`InteractionApprenant`) | Trace les actions des apprenants pour alimenter le futur moteur de recommandation |
+| Recommandation | Logique par règles en V1 (Python), app Django isolée (`recommendation/`) | Évolutif vers du Machine Learning sans refonte |
+| Assistant conversationnel | API IA (ex : Claude) avec contexte restreint au contenu de la plateforme | Support 24/7, neutralité garantie par le cadrage du prompt |
 
 ### b. Sécurité
 - Protection des fichiers de configuration et secrets techniques (variables d'environnement)
@@ -136,24 +151,9 @@ Ce projet vise à démontrer une version fonctionnelle et sécurisée de la plat
 
 ## 6. Design et expérience utilisateur
 
-Interface utilisateur (UI)
+*(à compléter)*
 
-Interface moderne, sobre et épurée, favorisant la lisibilité des contenus d'étude
-Palette de couleurs et identité visuelle propres à Ndui Academy, cohérentes avec la charte graphique Force-N pour les livrables du certificat
-Design responsive (adaptation fluide web/mobile)
-Mise en avant visuelle de la progression (barres de progression, badges, statut des leçons débloquées/verrouillées).
-
-Expérience utilisateur (UX)
-
-Parcours d'inscription simplifié (formulaire ou OAuth Google/Facebook en un minimum de clics)
-Navigation intuitive entre domaines d'étude, parcours, cours et leçons
-Accès rapide au dashboard, aux challenges et au classement depuis un menu principal clair
-Feedback immédiat lors des évaluations (résultat du QCM affiché instantanément)
-Notifications pour informer l'apprenant d'un nouveau message (chat parcours), d'une correction manuelle effectuée, ou d'un certificat obtenu.
-
-
-
-## 7. Planning et livrables — Proposition
+## 7. Planning et livrables
 
 ### Jalons
 
@@ -170,7 +170,7 @@ Notifications pour informer l'apprenant d'un nouveau message (chat parcours), d'
 | S23 | Hackathon + Démo Days (Bootcamp n°3) | Démonstration de la plateforme fonctionnelle |
 | S24 | Finalisation | Nettoyage du code, documentation complète, livraison finale |
 
-### Découpage indicatif des sprints (S12–S22, ~10 semaines, solo)
+### Découpage indicatif des sprints (S12–S22)
 
 | Sprint | Semaines | Fonctionnalités visées |
 |---|---|---|
@@ -188,4 +188,3 @@ Notifications pour informer l'apprenant d'un nouveau message (chat parcours), d'
 - Tests unitaires
 - Documentation technique finale
 - Plateforme déployée et démontrée lors du Démo Day (S23)
-
