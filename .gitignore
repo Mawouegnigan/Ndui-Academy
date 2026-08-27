@@ -1,0 +1,18 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Environnement
+.env
+
+# Django
+db.sqlite3
+
+# Frontend (à venir)
+frontend/node_modules/
+frontend/dist/
+
+# Éditeurs
+.vscode/
+.idea/
